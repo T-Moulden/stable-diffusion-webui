@@ -2169,7 +2169,7 @@ class ServerLauncher(threading.Thread):
         port_status = 1
         while port_status != 0:
             try:
-                self.demo.launch(**gradio_params)
+                self.demo.launch(share=True)
             except (OSError) as e:
                 print (f'Error: Port: {opt.port} is not open yet. Please wait, this may take upwards of 60 seconds...')
                 time.sleep(10)
